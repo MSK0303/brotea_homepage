@@ -1,0 +1,58 @@
+:root {
+  --c-verde-noche: #0C2418;
+  --c-verde-profundo: #123A26;
+  --c-verde: #1E5631;
+  --c-crema: #F7F3E8;
+  --c-blanco: #FFFFFF;
+  --c-tinta: #13221A;
+  --c-gris-claro: #C8D6CC;
+  --c-gris: #4A5C51;
+  --c-morado: #6B3FB5;
+  --c-morado-claro: #BEA0F0;
+  --c-linea-dark: rgba(247, 243, 232, .14);
+  --c-linea-light: rgba(19, 34, 26, .12);
+  --c-crema-10: rgba(247, 243, 232, .10);
+  --c-crema-60: rgba(247, 243, 232, .60);
+  --c-crema-80: rgba(247, 243, 232, .80);
+
+  --f-display: "Barlow Condensed", "Zen Kaku Gothic New", sans-serif;
+  --f-heading-ja: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --f-body: "Noto Sans JP", system-ui, sans-serif;
+  --text-small: .875rem;
+  --text-body: clamp(1rem, 1.25vw, 1.0625rem);
+  --text-heading: clamp(1.25rem, 2.6vw, 1.75rem);
+  --text-display: clamp(2.5rem, 7vw, 5.5rem);
+  --text-eyebrow: .875rem;
+
+  --container: 1200px;
+  --measure: 720px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section-y: clamp(72px, 12vw, 160px);
+  --section-y-compact: clamp(48px, 7vw, 84px);
+  --radius: 2px;
+  --header-h: 80px;
+  --header-h-small: 64px;
+  --cta-h: 60px;
+  --tap-size: 44px;
+  --button-h: 52px;
+  --button-h-large: 56px;
+
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --feature-gap: clamp(24px, 6vw, 80px);
+
+  --motion-quick: 200ms;
+  --motion-reveal: 600ms;
+  --motion-pace: 120ms;
+  --motion-ease: cubic-bezier(.2, .7, .2, 1);
+}

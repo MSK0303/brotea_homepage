@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brotea.jp/sitemap.xml

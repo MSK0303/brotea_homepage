@@ -1,0 +1,134 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-block-start: calc(var(--header-h) + var(--space-4));
+}
+
+body {
+  margin: 0;
+  background: var(--c-verde-noche);
+  color: var(--c-tinta);
+  font: 400 var(--text-body) / 1.9 var(--f-body);
+  letter-spacing: .04em;
+}
+
+:where(h1, h2, h3, p, figure, dl, dd, ul, ol) {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-heading-ja);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: var(--text-heading);
+}
+
+small {
+  font-size: var(--text-small);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: .23em;
+}
+
+button {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-morado-claro);
+  outline-offset: 3px;
+}
+
+.surface--light :focus-visible {
+  outline-color: var(--c-morado);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden,
+.skip-link:not(:focus) {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--gutter);
+  min-block-size: var(--tap-size);
+  padding: var(--space-2) var(--space-4);
+  background: var(--c-crema);
+  color: var(--c-tinta);
+}
+
+.surface--light {
+  --surface: var(--c-crema);
+  --accent: var(--c-morado);
+  --muted: var(--c-gris);
+  --line: var(--c-linea-light);
+  background-color: var(--surface);
+  color: var(--c-tinta);
+}
+
+.surface--dark, .surface--accent {
+  --surface: var(--c-verde-noche);
+  --accent: var(--c-morado-claro);
+  --muted: var(--c-gris-claro);
+  --line: var(--c-linea-dark);
+  background-color: var(--surface);
+  color: var(--c-crema);
+}
+
+.surface--accent {
+  --surface: var(--c-morado);
+  --accent: var(--c-crema);
+  --muted: var(--c-crema);
+}
+
+.tea-pattern {
+  position: relative;
+  isolation: isolate;
+}
+
+.tea-pattern::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("../img/pattern-tea.svg") repeat;
+  opacity: .05;
+  pointer-events: none;
+  content: "";
+}
+
+.prose > * + * {
+  margin-block-start: var(--space-5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
