@@ -1,10 +1,8 @@
 // 更新するのはこのファイルだけ。値が空文字 "" の項目は、サイト上で自動的に非表示・「準備中」になります。
 window.SITE_DATA = {
   forms: {
-    // TODO: 要確認
-    trial: "",     // 体験会申込 Googleフォーム URL【要確認】
-    // TODO: 要確認
-    contact: ""    // お問い合わせ Googleフォーム URL【要確認】
+    trial: "https://docs.google.com/forms/d/e/1FAIpQLSdEio4u3fHpflFRd4F4vXaWlLniJntTsnNoMtupxAaF9SnUGA/viewform",   // 体験会申込
+    contact: "https://docs.google.com/forms/d/e/1FAIpQLSfpR5RgwGVp4YKqjTCdUkVGdCJ0wCcTIgYC1HBvTKUOv7NpJQ/viewform"  // お問い合わせ
   },
   email: { user: "infocfbrotea", domain: "gmail.com" }, // クラブ用Gmail（募集要項web.mdより）
   // TODO: 要確認
