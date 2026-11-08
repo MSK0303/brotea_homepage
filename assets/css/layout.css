@@ -15,6 +15,34 @@
   padding-block: var(--section-y-compact);
 }
 
+.page-hero {
+  display: grid;
+  align-items: end;
+  min-block-size: clamp(320px, 50vh, 480px);
+  padding-block: var(--fallback-hero-inset, calc(var(--header-h) + var(--space-4))) var(--space-10);
+}
+
+.page-hero--compact {
+  min-block-size: clamp(280px, 43vh, 380px);
+}
+
+.page-hero__trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-3);
+  color: var(--muted);
+  font-size: var(--text-small);
+}
+
+.page-hero__trail a {
+  display: inline-flex;
+  align-items: center;
+  min-inline-size: var(--tap-size);
+  min-block-size: var(--tap-size);
+}
+
 .section__heading-row {
   display: flex;
   flex-wrap: wrap;
@@ -177,7 +205,8 @@
     z-index: -1;
     inset: 0;
     background: url("../img/pattern-tea.svg") repeat;
-    opacity: .05;
+    background-size: var(--tea-pattern-size);
+    opacity: var(--tea-pattern-opacity);
     content: "";
   }
 
@@ -323,8 +352,12 @@
 }
 
 @media (min-width: 960px) {
-  .feature-grid, .club-grid {
+  .feature-grid {
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  .club-grid {
+    grid-template-columns: minmax(370px, 2fr) minmax(0, 3fr);
   }
 
   .site-header__bar {

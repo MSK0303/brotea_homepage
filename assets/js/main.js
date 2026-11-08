@@ -137,13 +137,17 @@
       message = `${season}年度の募集は終了しました`;
     } else if (firstDeadline && today > firstDeadline) {
       message = "第一次締切は終了しました／引き続き受付中";
-    } else if (firstDeadline) {
-      const [year, month, day] = firstDeadline.split("-");
-      message = `第一次締切 ${year}年${Number(month)}月${Number(day)}日（定員になり次第締切）`;
     }
-    if (message) {
-      selectAll('[data-slot="deadline"]').forEach(slot => { slot.textContent = message; });
-    }
+    selectAll('[data-slot="deadline"]').forEach(slot => {
+      if (message) {
+        slot.textContent = message;
+      } else if (firstDeadline) {
+        const [year, month, day] = firstDeadline.split("-");
+        slot.textContent = slot.dataset.deadlineFormat === "short"
+          ? `第一次締切 ${firstDeadline.replace(/-/g, ".")}`
+          : `第一次締切 ${year}年${Number(month)}月${Number(day)}日（定員になり次第締切）`;
+      }
+    });
     if (season) selectAll("[data-season]").forEach(slot => { slot.textContent = season; });
   }
 
@@ -183,6 +187,12 @@
         link.replaceChildren(waitlist, arrowIcon());
       }
     });
+    if (status === "closed") {
+      selectAll("[data-recruitment-cta]").forEach(section => { section.hidden = true; });
+    }
+    if (status === "closed" || status === "full") {
+      selectAll("[data-recruitment-open]").forEach(element => { element.hidden = true; });
+    }
   }
 
   function renderInstagram(instagram) {
@@ -243,7 +253,9 @@
       link.hidden = !mapUrl;
       if (mapUrl) setExternalLink(link, mapUrl);
     });
-    if (venue.name) selectAll("[data-venue]").forEach(slot => { slot.textContent = venue.name; });
+    if (venue.name) selectAll("[data-venue]").forEach(slot => {
+      if (slot.textContent !== venue.name) slot.textContent = venue.name;
+    });
   }
 
   function initHeader(header) {

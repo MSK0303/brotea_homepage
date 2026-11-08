@@ -14,6 +14,8 @@
   --c-crema-10: rgba(247, 243, 232, .10);
   --c-crema-60: rgba(247, 243, 232, .60);
   --c-crema-80: rgba(247, 243, 232, .80);
+  --tea-pattern-size: 220px;
+  --tea-pattern-opacity: .03;
 
   --f-display: "Barlow Condensed", "Zen Kaku Gothic New", sans-serif;
   --f-heading-ja: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
@@ -21,7 +23,7 @@
   --text-small: .875rem;
   --text-body: clamp(1rem, 1.25vw, 1.0625rem);
   --text-heading: clamp(1.25rem, 2.6vw, 1.75rem);
-  --text-display: clamp(2.5rem, 7vw, 5.5rem);
+  --text-display: clamp(2.25rem, 7vw, 5.5rem);
   --text-eyebrow: .875rem;
 
   --container: 1200px;

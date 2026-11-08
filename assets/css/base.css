@@ -14,17 +14,31 @@ body {
   letter-spacing: .04em;
 }
 
-:where(h1, h2, h3, p, figure, dl, dd, ul, ol) {
+:where(h1, h2, h3, h4, p, figure, dl, dd, ul, ol) {
   margin: 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--f-heading-ja);
   line-height: 1.25;
 }
 
 h3 {
   font-size: var(--text-heading);
+}
+
+:where(h1, h2, h3, h4, .lead, .hero__intro p, .statement, .recruitment__lead,
+       .tactical-pair p, .facts dt, .facts dd, .deadline, .button, figcaption, summary) {
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+
+:where(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 small {
@@ -116,7 +130,8 @@ img {
   z-index: -1;
   inset: 0;
   background: url("../img/pattern-tea.svg") repeat;
-  opacity: .05;
+  background-size: var(--tea-pattern-size);
+  opacity: var(--tea-pattern-opacity);
   pointer-events: none;
   content: "";
 }
