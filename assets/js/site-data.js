@@ -17,7 +17,8 @@ window.SITE_DATA = {
     firstDeadline: "2026-12-31"
   },
   trialSessions: [
-    // { date: "2026-11-24", time: "19:00〜21:00", place: "嬉野市吉田中学校グラウンド", note: "" }
+    { date: "2026-11-18", time: "19:00〜21:00", place: "嬉野市吉田中学校グラウンド", note: "" },
+    { date: "2026-11-27", time: "19:00〜21:00", place: "嬉野市吉田中学校グラウンド", note: "" }
   ],
   news: [
     // TODO: 要確認
