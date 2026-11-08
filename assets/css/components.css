@@ -1040,3 +1040,32 @@
     letter-spacing: .16em;
   }
 }
+
+
+/* 代表カード：メッセージをカード下段に（スマホでは全幅） */
+.staff-card {
+  grid-template-areas: "photo body" "photo message";
+  grid-template-rows: auto 1fr;
+}
+.staff-card > .photo-slot { grid-area: photo; align-self: stretch; }
+.staff-card__body { grid-area: body; align-self: end; padding-block-end: 0; }
+.staff-card__message {
+  grid-area: message;
+  align-self: start;
+  padding: var(--space-2) clamp(12px, 2.5vw, 28px) clamp(12px, 2.5vw, 28px);
+}
+.staff-card__message p {
+  font-size: var(--text-small);
+  line-height: 1.75;
+}
+.staff-card__message p + p { margin-block-start: .6em; }
+
+@media (max-width: 639px) {
+  .staff-card {
+    grid-template-areas: "photo body" "message message";
+    grid-template-rows: auto auto;
+  }
+  .staff-card > .photo-slot { align-self: start; }
+  .staff-card__body { align-self: center; padding-block-end: clamp(12px, 2.5vw, 28px); }
+  .staff-card__message { padding-block-start: var(--space-2); border-block-start: 1px solid var(--line); }
+}
